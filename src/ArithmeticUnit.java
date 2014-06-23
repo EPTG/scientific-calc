@@ -76,7 +76,7 @@ public class ArithmeticUnit{
 
 
 
-    
+
     public List<String> Roundparentheses(List<String> list){
     	while(list.contains(RpareL)|list.contains(RpareR)){
     		int temp1= list.indexOf(RpareL);
@@ -117,7 +117,7 @@ public class ArithmeticUnit{
     	list = Whitedel(list);
     	System.out.println(list);
     	list = Roundparentheses(list);//括弧の処理
-    	
+
     	while(list.contains("√")){
     	int temp = list.indexOf("√");
     	list.set(temp,root(list,temp));
@@ -133,7 +133,7 @@ public class ArithmeticUnit{
     	BigDecimal firstnum;
     	BigDecimal secondnum;
     	BigDecimal result = null;
-	
+
     		while(list.contains(OPERATORS[2])||list.contains(OPERATORS[3])){
     				int temp1 = list.indexOf(OPERATORS[2]);
     				int temp2 = list.indexOf(OPERATORS[3]);
@@ -159,7 +159,7 @@ public class ArithmeticUnit{
         					j=3;
         					}
     				}
-    				
+
     					firstnum=new BigDecimal(list.get(now-1));
     					secondnum=new BigDecimal(list.get(now+1));
     					switch(j){
@@ -169,22 +169,24 @@ public class ArithmeticUnit{
     						result = firstnum.multiply(secondnum);
     						break;
     						case 3:
-    						result = firstnum.divide(secondnum);
+    						System.out.println(firstnum);
+        					System.out.println(secondnum);
+    						result = firstnum.divide(secondnum,15,BigDecimal.ROUND_HALF_EVEN);
     						break;
     						}
-				      
+
 					list.set(now, result.toString());
     					list.remove(now+1);
     					list.remove(now-1);
-    				
+
     				System.out.println(list);
     			}
-    		
+
 
     	for(int j=0;j<2;j++){
     		while(list.contains(OPERATORS[j])){
     				int now = list.indexOf(OPERATORS[j]);
-    				
+
     					firstnum=new BigDecimal(list.get(now-1));
     					secondnum=new BigDecimal(list.get(now+1));
     				switch(j){
@@ -199,7 +201,7 @@ public class ArithmeticUnit{
     					list.set(now, result.toString());
     					list.remove(now+1);
     					list.remove(now-1);
-    				
+
 
     				System.out.println(list);
     			}
