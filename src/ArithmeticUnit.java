@@ -140,13 +140,13 @@ public class ArithmeticUnit{
     	list.remove(temp+1);
     	}
 
-	while(list.contains("Sin")){
+    	while(list.contains("Sin")){
     	int temp = list.indexOf("Sin");
     	list.set(temp,Sin(list,temp));
     	list.remove(temp+1);
     	}
 
-	while(list.contains("rad")){
+    	while(list.contains("rad")){
     	int temp = list.indexOf("rad");
     	list.set(temp,rad(list,temp));
     	list.remove(temp+1);
@@ -206,11 +206,14 @@ public class ArithmeticUnit{
     			}
 
 
-    	for(int j=0;j<2;j++){
+    	for(int j=1;j>=0;j--){
     		while(list.contains(OPERATORS[j])){
     				int now = list.indexOf(OPERATORS[j]);
-
+    				try{
     					firstnum=new BigDecimal(list.get(now-1));
+    				}catch(IndexOutOfBoundsException e){
+    					firstnum=null;
+    				}
     					secondnum=new BigDecimal(list.get(now+1));
 
     				switch(j){
@@ -218,14 +221,21 @@ public class ArithmeticUnit{
     						result = firstnum.add(secondnum);
     						break;
     					case 1:
+    						if(firstnum!=null){
     						result = firstnum.subtract(secondnum);
     						break;
+    						}
+    						else if(firstnum==null){
+    						result = BigDecimal.ZERO.subtract(secondnum);
+    						break;
+    						}
     				}
-				result.setScale(12);
+    					result.setScale(14);
     					list.set(now, result.toString());
     					list.remove(now+1);
+    					if(firstnum!=null){
     					list.remove(now-1);
-
+    					}
 
     				System.out.println(list);
     			}
