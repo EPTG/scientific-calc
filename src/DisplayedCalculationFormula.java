@@ -1,6 +1,6 @@
-import javax.swing.JLabel;
 import java.util.Arrays;
-import java.util.List;
+
+import javax.swing.JLabel;
 
 /** 表示する式に関しての処理を行う．ここで表示する数の表示も行う．また、入力完了フラグの処理も行う． */
 
@@ -11,12 +11,12 @@ public class DisplayedCalculationFormula extends JLabel{
     private String slash;
     private Boolean finishedFlag;
     private String[] Clearstr = {"0","1","2","3","4","5","6","7","8","9","√("};
-	
+
 
     /** 表示する式の初期化をし初期表示を行う*/
     public DisplayedCalculationFormula(){
-    	disp="Sin(";
-    	slash="Sin/(/";
+    	disp="";
+    	slash="";
 	finishedFlag=false;
     	super.setText(disp);//初期表示を変更した(8回より前ではsuper.setTextだったがこちらの方に変更した)
     }

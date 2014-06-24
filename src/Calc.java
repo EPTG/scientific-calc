@@ -18,6 +18,8 @@ public class Calc extends JFrame{
     private RoundparenthesesButton[] RpButton;
     /** √ボタン */
     private RootButton RootButton;
+    /** 三角関数ボタン */
+    private TrigonometricFunctionButton[] Trigonometricbutton;
     /** ＝ボタン */
     private EqualButton equalButton;
     /** Cボタン */
@@ -53,11 +55,18 @@ public class Calc extends JFrame{
 		for (int i = 0; i<10; i++){
 		    numButton[i] = new NumButton(dispCalcf,Integer.toString(i));
 		}
-		
+
 		dotButton =new DotButton(dispCalcf);
-		
+
 
 		//いろんなボタンのインスタンス化
+
+		//OPボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan
+				Trigonometricbutton = new TrigonometricFunctionButton[3];
+				for (int i = 0; i<3; i++){
+				    Trigonometricbutton[i] = new TrigonometricFunctionButton(dispCalcf,i);
+				}//OPボタンのインスタンス化ここまで
+
 		//OPボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
 		opButton = new OpButton[4];
 		for (int i = 0; i<4; i++){
@@ -126,7 +135,7 @@ public class Calc extends JFrame{
     	c.gridwidth = 1;
     	c.gridy = 3;
     	add(numButton[2], c);
-	add(numButton[3], c);
+    	add(numButton[3], c);
 	c.gridheight = 2;
 	//sumButtonは二行分
 	add(opButton[0], c);
@@ -136,7 +145,9 @@ public class Calc extends JFrame{
 	c.gridy = 4;
 	c.gridwidth = 1;
 	add(equalButton, c);
-
+	add(Trigonometricbutton[0],c);
+	add(Trigonometricbutton[1],c);
+	add(Trigonometricbutton[2],c);
     }
 }
 
