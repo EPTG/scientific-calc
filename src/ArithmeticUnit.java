@@ -58,9 +58,10 @@ public class ArithmeticUnit{
 		Double Dnum = num.doubleValue();
 		System.out.println(Dnum);
 		Dnum = Math.sqrt(Dnum);
+		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		System.out.println(Dnum);
-		return String.valueOf(Dnum);
+		return num.toPlainString();
 	}
 
     private String Sin(List<String> list, int indexOf) {
