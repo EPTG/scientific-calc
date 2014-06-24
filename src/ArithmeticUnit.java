@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -205,7 +206,7 @@ public class ArithmeticUnit{
     				System.out.println(list);
     			}
 
-
+    	//負の数入力のためにマイナスを先に評価した
     	for(int j=1;j>=0;j--){
     		while(list.contains(OPERATORS[j])){
     				int now = list.indexOf(OPERATORS[j]);
@@ -226,7 +227,7 @@ public class ArithmeticUnit{
     						break;
     						}
     						else if(firstnum==null){
-    						result = BigDecimal.ZERO.subtract(secondnum);
+    						result = secondnum.negate();
     						break;
     						}
     				}
@@ -241,12 +242,19 @@ public class ArithmeticUnit{
     			}
     		System.out.println(list);
     		}
-    		String tmp=list.get(0);
-    		if(list.size()>1){
-    			return "色々とエラー";
-    		}
-    		return tmp;
+    	if(list.size()>1){
+			return "色々とエラー(計算しきれてない模様)";
+		}
+    	BigDecimal tmp = new BigDecimal(list.get(0));
+    	BigDecimal keta = new BigDecimal("1.0E15");
+    	DecimalFormat df1 = new DecimalFormat("###############.###############");
+    	DecimalFormat df2 = new DecimalFormat("0.00#############E0");
+    	if(tmp.compareTo(keta) > 0){
+    	return df2.format(tmp);
     	}
-
+    	else{
+    	return df1.format(tmp);
+    	}
+    }
 }
 
