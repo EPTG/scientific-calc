@@ -71,7 +71,10 @@ public class ArithmeticUnit{
 		Dnum = Math.sin(Dnum);
 		System.out.println(num);
 		System.out.println(Dnum);
-		return String.valueOf(Dnum);
+		// 一旦BigDecimalになおして丸めておくのが良さげ。
+		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		System.out.println(num);
+		return String.valueOf(num);
 	}
 
 
