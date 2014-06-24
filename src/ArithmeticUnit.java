@@ -74,10 +74,22 @@ public class ArithmeticUnit{
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
 		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
-		return String.valueOf(num);
+		return num.toPlainString();
 	}
 
-
+    private String rad(List<String> list, int indexOf) {
+		BigDecimal num;
+		num =new BigDecimal(list.get(indexOf+1));
+		Double Dnum = num.doubleValue();
+		System.out.println(Dnum);
+		Dnum = Math.toRadians(Dnum);
+		System.out.println(num);
+		System.out.println(Dnum);
+		// 一旦BigDecimalになおして丸めておくのが良さげ。
+		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		System.out.println(num);
+		return num.toPlainString();
+	}
 
 
     public List<String> Roundparentheses(List<String> list){
@@ -132,6 +144,13 @@ public class ArithmeticUnit{
     	list.set(temp,Sin(list,temp));
     	list.remove(temp+1);
     	}
+
+	while(list.contains("rad")){
+    	int temp = list.indexOf("rad");
+    	list.set(temp,rad(list,temp));
+    	list.remove(temp+1);
+    	}
+
 
     	BigDecimal firstnum;
     	BigDecimal secondnum;
@@ -192,6 +211,7 @@ public class ArithmeticUnit{
 
     					firstnum=new BigDecimal(list.get(now-1));
     					secondnum=new BigDecimal(list.get(now+1));
+
     				switch(j){
     					case 0:
     						result = firstnum.add(secondnum);

@@ -61,11 +61,11 @@ public class Calc extends JFrame{
 
 		//いろんなボタンのインスタンス化
 
-		//OPボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan
-				Trigonometricbutton = new TrigonometricFunctionButton[3];
-				for (int i = 0; i<3; i++){
-				    Trigonometricbutton[i] = new TrigonometricFunctionButton(dispCalcf,i);
-				}//OPボタンのインスタンス化ここまで
+		//OPボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がrad
+		Trigonometricbutton = new TrigonometricFunctionButton[4];
+		for (int i = 0; i<4; i++){
+		    Trigonometricbutton[i] = new TrigonometricFunctionButton(dispCalcf,i);
+		}//OPボタンのインスタンス化ここまで
 
 		//OPボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
 		opButton = new OpButton[4];
@@ -148,6 +148,7 @@ public class Calc extends JFrame{
 	add(Trigonometricbutton[0],c);
 	add(Trigonometricbutton[1],c);
 	add(Trigonometricbutton[2],c);
+	add(Trigonometricbutton[3],c);
     }
 }
 
