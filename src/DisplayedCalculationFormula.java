@@ -10,7 +10,7 @@ public class DisplayedCalculationFormula extends JLabel{
     private String disp;
     private String slash;
     private Boolean finishedFlag;
-    private String[] Clearstr = {"0","1","2","3","4","5","6","7","8","9","√("};
+    private String[] Clearstr = {"0","1","2","3","4","5","6","7","8","9","√(","Ans"};
 
 
     /** 表示する式の初期化をし初期表示を行う*/

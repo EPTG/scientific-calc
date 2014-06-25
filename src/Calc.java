@@ -52,7 +52,7 @@ public class Calc extends JFrame{
 	/*後で必要なコードを書く*/
     	dispCalcf=new DisplayedCalculationFormula();
     	arithmUnit=new ArithmeticUnit(dispCalcf);
-    	clearButton =  new ClearButton(dispCalcf);
+    	clearButton =  new ClearButton(arithmUnit, dispCalcf);
 		calcLabel =dispCalcf;
 		RootButton = new RootButton(dispCalcf);
 		numButton = new NumButton[10];
@@ -78,8 +78,8 @@ public class Calc extends JFrame{
 		}//OPボタンのインスタンス化ここまで
 
 		//Fixednボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
-		fixedButton = new FixednumberButton[1];
-		for (int i = 0; i<1; i++){
+		fixedButton = new FixednumberButton[2];
+		for (int i = 0; i<2; i++){
 			fixedButton[i] = new FixednumberButton(dispCalcf,i);
 		}//OPボタンのインスタンス化ここまで
 
@@ -120,7 +120,9 @@ public class Calc extends JFrame{
     	add(numButton[9], c);
     	c.gridwidth = 2;
     	add(clearButton, c);
+    	c.gridwidth = 1;
     	add(delButton,c);
+    	add(fixedButton[1],c);
     	//上から1行め終わり
     	//上から2行め
     	c.gridwidth = 1;

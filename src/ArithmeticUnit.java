@@ -19,7 +19,8 @@ public class ArithmeticUnit{
     public static String OP_NONE = "";
     /** ボタンを表示する演算子を列挙した配列*/
     public static String OPERATORS[] = {OP_PLUS,OP_MINUS,OP_TIMES,OP_DIVIDE};
-
+    /** 前回の答え*/
+    public static String Ans = "0";
     /** (が取りうる値 */
     public static String RpareL = "(";
     /** )が取りうる値 */
@@ -35,6 +36,11 @@ public class ArithmeticUnit{
     public ArithmeticUnit(DisplayedCalculationFormula dispCalcf){
     	this.dispCalcf = dispCalcf;
     }
+
+    public void Clear(){
+    	Ans = "0";
+    }
+
     /** 演算子と数値を分ける*/
     public String[] split_op_num(){
     	String[] s =dispCalcf.getslash().split("/");
@@ -139,6 +145,11 @@ public class ArithmeticUnit{
     	int temp =list.indexOf("π");
     	list.set(temp, Double.toString(Math.PI));
     	}
+
+    	while(list.contains("Ans")){
+        	int temp =list.indexOf("Ans");
+        	list.set(temp, Ans);
+        	}
 
     	while(list.contains("√")){
     	int temp = list.indexOf("√");
@@ -255,9 +266,11 @@ public class ArithmeticUnit{
     	DecimalFormat df1 = new DecimalFormat("###############.###############");
     	DecimalFormat df2 = new DecimalFormat("0.00###################E0");
     	if(tmp.compareTo(keta) > 0){
+    	Ans=df2.format(tmp);
     	return df2.format(tmp);
     	}
     	else{
+    	Ans=df1.format(tmp);
     	return df1.format(tmp);
     	}
     }

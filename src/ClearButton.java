@@ -7,13 +7,14 @@ public class ClearButton extends JButton implements MouseListener{
 
     /** 表示する数 */
     private DisplayedCalculationFormula dispNumber;
-
+    private ArithmeticUnit arithmUnit;
     /** 演算器 */
 
     /** フィールドの表示する数と演算器に引数の表示する数と演算器を代入 */
-    public ClearButton( DisplayedCalculationFormula dispNumber){
+    public ClearButton(ArithmeticUnit arithmUnit,DisplayedCalculationFormula dispNumber){
     	super("C");
     	this.dispNumber = dispNumber;
+    	this.arithmUnit = arithmUnit;
     	addMouseListener(this);
     }
 
@@ -22,6 +23,7 @@ public class ClearButton extends JButton implements MouseListener{
     	/*必要な処理を後でかく*/
     	/*cボタンは演算器の初期化と表示する数の初期化を行う*/
     	dispNumber.clear();
+    	arithmUnit.Clear();
     }
     /**使用しない*/
     public void mouseEntered(MouseEvent e){}
