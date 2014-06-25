@@ -231,7 +231,7 @@ public class ArithmeticUnit{
     						break;
     						}
     				}
-    					result.setScale(14);
+
     					list.set(now, result.toString());
     					list.remove(now+1);
     					if(firstnum!=null){
@@ -248,7 +248,7 @@ public class ArithmeticUnit{
     	BigDecimal tmp = new BigDecimal(list.get(0));
     	BigDecimal keta = new BigDecimal("1.0E15");
     	DecimalFormat df1 = new DecimalFormat("###############.###############");
-    	DecimalFormat df2 = new DecimalFormat("0.00#############E0");
+    	DecimalFormat df2 = new DecimalFormat("0.00###################E0");
     	if(tmp.compareTo(keta) > 0){
     	return df2.format(tmp);
     	}

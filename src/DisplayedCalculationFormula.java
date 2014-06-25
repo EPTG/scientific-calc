@@ -59,6 +59,39 @@ public class DisplayedCalculationFormula extends JLabel{
     public String getslash(){
     	return slash;
     }
+    public void Delate(){
+    	if(disp.length()==0){
+    		return;
+    	}
+    	//表示する数の削除
+    	disp= disp.substring(0, (disp.length()-1));
+    	char last = 0;
+    	char last_1 = 0;
+    	try{
+    	 last=slash.charAt(slash.length()-1);
+    	 last_1=slash.charAt(slash.length()-2);
+    	}catch(IndexOutOfBoundsException e){
+    	 last_1= 0;
+    	}
+    	System.out.println(last);
+    	System.out.println(last_1);
+
+    	if(last=='/' && last_1=='/'){
+    		slash =slash.substring(0, slash.length()-3);
+    	}
+    	else if(last=='/'){
+    		slash =slash.substring(0, slash.length()-2);
+    	}
+    	else{
+    		slash = slash.substring(0,slash.length()-1);
+    	}
+
+    	if(slash.equals("/")){
+    		slash = "";
+    	}
+    	System.out.println(slash);
+    	super.setText(disp);
+    }
     public void setFlag(){
 	finishedFlag=true;
     }

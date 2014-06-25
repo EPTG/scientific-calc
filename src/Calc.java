@@ -14,6 +14,8 @@ public class Calc extends JFrame{
     private DotButton dotButton;
     /**演算記号ボタン + - * / の4つ */
     private OpButton[] opButton;
+    /**削除ボタン*/
+    private DeleteButton delButton;
     /** ()ボタン */
     private RoundparenthesesButton[] RpButton;
     /** √ボタン */
@@ -57,7 +59,7 @@ public class Calc extends JFrame{
 		}
 
 		dotButton =new DotButton(dispCalcf);
-
+		delButton =new DeleteButton(dispCalcf);
 
 		//いろんなボタンのインスタンス化
 
@@ -110,6 +112,7 @@ public class Calc extends JFrame{
     	add(numButton[9], c);
     	c.gridwidth = 2;
     	add(clearButton, c);
+    	add(delButton,c);
     	//上から1行め終わり
     	//上から2行め
     	c.gridwidth = 1;
