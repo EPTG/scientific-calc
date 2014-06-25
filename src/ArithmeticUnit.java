@@ -135,6 +135,11 @@ public class ArithmeticUnit{
     	System.out.println(list);
     	list = Roundparentheses(list);//括弧の処理
 
+    	while(list.contains("π")){
+    	int temp =list.indexOf("π");
+    	list.set(temp, Double.toString(Math.PI));
+    	}
+
     	while(list.contains("√")){
     	int temp = list.indexOf("√");
     	list.set(temp,root(list,temp));

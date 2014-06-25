@@ -20,6 +20,8 @@ public class Calc extends JFrame{
     private RoundparenthesesButton[] RpButton;
     /** √ボタン */
     private RootButton RootButton;
+    /** 定数ボタン */
+    private FixednumberButton[] fixedButton;
     /** 三角関数ボタン */
     private TrigonometricFunctionButton[] Trigonometricbutton;
     /** ＝ボタン */
@@ -63,16 +65,22 @@ public class Calc extends JFrame{
 
 		//いろんなボタンのインスタンス化
 
-		//OPボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がrad
+		//Triボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がrad
 		Trigonometricbutton = new TrigonometricFunctionButton[4];
 		for (int i = 0; i<4; i++){
 		    Trigonometricbutton[i] = new TrigonometricFunctionButton(dispCalcf,i);
-		}//OPボタンのインスタンス化ここまで
+		}//Triボタンのインスタンス化ここまで
 
 		//OPボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
 		opButton = new OpButton[4];
 		for (int i = 0; i<4; i++){
 		    opButton[i] = new OpButton(dispCalcf,i);
+		}//OPボタンのインスタンス化ここまで
+
+		//Fixednボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
+		fixedButton = new FixednumberButton[1];
+		for (int i = 0; i<1; i++){
+			fixedButton[i] = new FixednumberButton(dispCalcf,i);
 		}//OPボタンのインスタンス化ここまで
 
 		//()ボタンのインスタンスが配列に入れられる順は0が( 1が)
@@ -152,6 +160,7 @@ public class Calc extends JFrame{
 	add(Trigonometricbutton[1],c);
 	add(Trigonometricbutton[2],c);
 	add(Trigonometricbutton[3],c);
+	add(fixedButton[0],c);
     }
 }
 
