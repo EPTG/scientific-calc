@@ -109,7 +109,7 @@ public class Calc extends JFrame{
     private void initGUI(){
     	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	/*後で必要なコードを書く*/
-    	setSize(300,250);
+    	setSize(700,400);
     	setLocation(100,100);
     	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
