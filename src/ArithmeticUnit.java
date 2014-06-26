@@ -129,6 +129,35 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
+    private String Cos(List<String> list, int indexOf) {
+		BigDecimal num;
+		num =new BigDecimal(list.get(indexOf+1));
+		Double Dnum = num.doubleValue();
+		System.out.println(Dnum);
+		Dnum = Math.cos(Dnum);
+		System.out.println(num);
+		System.out.println(Dnum);
+		// 一旦BigDecimalになおして丸めておくのが良さげ。
+		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		System.out.println(num);
+		return num.toPlainString();
+	}
+
+    private String Tan(List<String> list, int indexOf) {
+		BigDecimal num;
+		num =new BigDecimal(list.get(indexOf+1));
+		Double Dnum = num.doubleValue();
+		System.out.println(Dnum);
+		Dnum = Math.tan(Dnum);
+		System.out.println(num);
+		System.out.println(Dnum);
+		// 一旦BigDecimalになおして丸めておくのが良さげ。
+		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		System.out.println(num);
+		return num.toPlainString();
+	}
+
+
     private String rad(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -223,6 +252,19 @@ public class ArithmeticUnit{
     	list.set(temp,Sin(list,temp));
     	list.remove(temp+1);
     	}
+
+    	while(list.contains("Cos")){
+        int temp = list.indexOf("Cos");
+        list.set(temp,Cos(list,temp));
+        list.remove(temp+1);
+        }
+
+    	while(list.contains("Tan")){
+        int temp = list.indexOf("Tan");
+        list.set(temp,Tan(list,temp));
+        list.remove(temp+1);
+        }
+
 
     	while(list.contains("rad")){
     	int temp = list.indexOf("rad");
