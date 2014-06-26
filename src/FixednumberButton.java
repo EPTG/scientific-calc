@@ -11,8 +11,10 @@ public class FixednumberButton extends JButton implements MouseListener {
     public static String PI = "π";
     /** Ansが取りうる値*/
     public static String ANS = "Ans";
+    /** eが取りうる値*/
+    public static String E = "e";
     /** ボタンを表示する定数を列挙した配列*/
-    public static String FIXEDN[] = {PI,ANS};
+    public static String FIXEDN[] = {PI,ANS,E};
 
     private String fixedn;
 

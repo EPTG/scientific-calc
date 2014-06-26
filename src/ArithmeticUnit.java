@@ -71,6 +71,35 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
+    private String Log(List<String> list, int indexOf) {
+		BigDecimal num;
+		num =new BigDecimal(list.get(indexOf+1));
+		Double Dnum = num.doubleValue();
+		System.out.println(Dnum);
+		Dnum = Math.log10(Dnum);
+		System.out.println(num);
+		System.out.println(Dnum);
+		// 一旦BigDecimalになおして丸めておくのが良さげ。
+		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		System.out.println(num);
+		return num.toPlainString();
+	}
+
+    private String Ln(List<String> list, int indexOf) {
+		BigDecimal num;
+		num =new BigDecimal(list.get(indexOf+1));
+		Double Dnum = num.doubleValue();
+		System.out.println(Dnum);
+		Dnum = Math.log(Dnum);
+		System.out.println(num);
+		System.out.println(Dnum);
+		// 一旦BigDecimalになおして丸めておくのが良さげ。
+		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		System.out.println(num);
+		return num.toPlainString();
+	}
+
+
     private String Sin(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -146,6 +175,11 @@ public class ArithmeticUnit{
     	list.set(temp, Double.toString(Math.PI));
     	}
 
+    	while(list.contains("e")){
+        	int temp =list.indexOf("e");
+        	list.set(temp, Double.toString(Math.E));
+        	}
+
     	while(list.contains("Ans")){
         	int temp =list.indexOf("Ans");
         	list.set(temp, Ans);
@@ -156,6 +190,18 @@ public class ArithmeticUnit{
     	list.set(temp,root(list,temp));
     	list.remove(temp+1);
     	}
+
+    	while(list.contains("log")){
+        int temp = list.indexOf("log");
+        list.set(temp,Log(list,temp));
+        list.remove(temp+1);
+        }
+
+    	while(list.contains("ln")){
+        int temp = list.indexOf("ln");
+        list.set(temp,Ln(list,temp));
+        list.remove(temp+1);
+        }
 
     	while(list.contains("Sin")){
     	int temp = list.indexOf("Sin");

@@ -22,6 +22,8 @@ public class Calc extends JFrame{
     private RootButton RootButton;
     /** 定数ボタン */
     private FixednumberButton[] fixedButton;
+    /** Logボタン */
+    private LogButton[] logButton;
     /** 三角関数ボタン */
     private TrigonometricFunctionButton[] Trigonometricbutton;
     /** ＝ボタン */
@@ -71,6 +73,12 @@ public class Calc extends JFrame{
 		    Trigonometricbutton[i] = new TrigonometricFunctionButton(dispCalcf,i);
 		}//Triボタンのインスタンス化ここまで
 
+		//Logボタンのインスタンスが配列に入れられる順は0がlog 1がln
+		logButton = new LogButton[2];
+		for (int i = 0; i<2; i++){
+		    logButton[i] = new LogButton(dispCalcf,i);
+		}//Logボタンのインスタンス化ここまで
+
 		//OPボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
 		opButton = new OpButton[4];
 		for (int i = 0; i<4; i++){
@@ -78,10 +86,10 @@ public class Calc extends JFrame{
 		}//OPボタンのインスタンス化ここまで
 
 		//Fixednボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
-		fixedButton = new FixednumberButton[2];
-		for (int i = 0; i<2; i++){
+		fixedButton = new FixednumberButton[3];
+		for (int i = 0; i<3; i++){
 			fixedButton[i] = new FixednumberButton(dispCalcf,i);
-		}//OPボタンのインスタンス化ここまで
+		}//Fixednボタンのインスタンス化ここまで
 
 		//()ボタンのインスタンスが配列に入れられる順は0が( 1が)
 		RpButton = new RoundparenthesesButton[2];
@@ -145,10 +153,10 @@ public class Calc extends JFrame{
     	c.gridwidth = 2;
     	c.gridy = 4;
     	add(numButton[0],c);
-    	
+
     	c.gridwidth = 1;
     	add(dotButton,c);
-    	
+
     	c.gridy = 3;
     	add(numButton[2], c);
     	add(numButton[3], c);
@@ -157,6 +165,9 @@ public class Calc extends JFrame{
 	add(opButton[0], c);
 	c.gridheight = 1;
 	add(opButton[1], c);
+	add(fixedButton[2],c);
+	add(logButton[0],c);
+	add(logButton[1],c);
 	c.gridwidth = 2;
 	c.gridy = 4;
 	c.gridwidth = 1;
