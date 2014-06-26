@@ -71,6 +71,21 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
+    private void pow(List<String> list) {
+		double firstnum;
+		firstnum =Double.valueOf(list.get(0));
+		double secondnum;
+		secondnum = Double.valueOf(list.get(2));
+		double result;
+		result = Math.pow(firstnum, secondnum);
+		list.set(0,Double.toString(result));
+		list.remove(1);
+		list.remove(1);
+	}
+
+
+
+
     private String Log(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -215,6 +230,11 @@ public class ArithmeticUnit{
     	list.remove(temp+1);
     	}
 
+    	while(list.contains("^")){
+    	int temp =list.indexOf("^");
+    	pow(list.subList(temp-1,temp+2));//累乗は○^○の形なので
+    	}
+
 
     	BigDecimal firstnum;
     	BigDecimal secondnum;
@@ -320,5 +340,7 @@ public class ArithmeticUnit{
     	return df1.format(tmp);
     	}
     }
+
+
 }
 
