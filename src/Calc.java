@@ -20,6 +20,8 @@ public class Calc extends JFrame{
     private RoundparenthesesButton[] RpButton;
     /** √ボタン */
     private RootButton RootButton;
+    /** ^ボタン */
+    private PowButton powButton;
     /** 定数ボタン */
     private FixednumberButton[] fixedButton;
     /** Logボタン */
@@ -57,6 +59,8 @@ public class Calc extends JFrame{
     	clearButton =  new ClearButton(arithmUnit, dispCalcf);
 		calcLabel =dispCalcf;
 		RootButton = new RootButton(dispCalcf);
+		powButton = new PowButton(dispCalcf);
+
 		numButton = new NumButton[10];
 		for (int i = 0; i<10; i++){
 		    numButton[i] = new NumButton(dispCalcf,Integer.toString(i));
@@ -143,7 +147,7 @@ public class Calc extends JFrame{
     	add(RpButton[0],c);
     	add(RpButton[1],c);
     	add(RootButton,c);
-
+    	add(powButton,c);
     	//上から二行目終わり
     	//上から三行目
     	c.gridwidth = 1;
