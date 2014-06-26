@@ -135,7 +135,7 @@ public class Calc extends JFrame{
     	add(RpButton[0],c);
     	add(RpButton[1],c);
     	add(RootButton,c);
-	add(dotButton,c);
+
     	//上から二行目終わり
     	//上から三行目
     	c.gridwidth = 1;
@@ -145,7 +145,10 @@ public class Calc extends JFrame{
     	c.gridwidth = 2;
     	c.gridy = 4;
     	add(numButton[0],c);
+    	
     	c.gridwidth = 1;
+    	add(dotButton,c);
+    	
     	c.gridy = 3;
     	add(numButton[2], c);
     	add(numButton[3], c);
