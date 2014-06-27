@@ -65,7 +65,7 @@ public class ArithmeticUnit{
 		Double Dnum = num.doubleValue();
 		System.out.println(Dnum);
 		Dnum = Math.sqrt(Dnum);
-		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		System.out.println(Dnum);
 		return num.toPlainString();
@@ -95,7 +95,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -109,7 +109,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -124,7 +124,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -138,7 +138,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -152,7 +152,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -167,7 +167,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(14,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -319,7 +319,7 @@ public class ArithmeticUnit{
     						case 3:
     						System.out.println(firstnum);
         					System.out.println(secondnum);
-    						result = firstnum.divide(secondnum,15,BigDecimal.ROUND_HALF_EVEN);
+    						result = firstnum.divide(secondnum,16,BigDecimal.ROUND_HALF_EVEN);
     						break;
     						}
 
