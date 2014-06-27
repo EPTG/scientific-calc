@@ -2,15 +2,16 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
-/** Cボタンの生成とCボタンが押された際の処理を行う */
+/** Cボタンの表示とCボタンが押された際の処理を行う */
 public class ClearButton extends JButton implements MouseListener{
 
-    /** 表示する数 */
+    /** 表示する数式 */
     private DisplayedCalculationFormula dispNumber;
-    private ArithmeticUnit arithmUnit;
     /** 演算器 */
+    private ArithmeticUnit arithmUnit;
+    
 
-    /** フィールドの表示する数と演算器に引数の表示する数と演算器を代入 */
+    /** フィールドの表示する数と演算器に引数の表示する数式と演算器を代入 */
     public ClearButton(ArithmeticUnit arithmUnit,DisplayedCalculationFormula dispNumber){
     	super("C");
     	this.dispNumber = dispNumber;
@@ -18,7 +19,7 @@ public class ClearButton extends JButton implements MouseListener{
     	addMouseListener(this);
     }
 
-    /** Cボタンが押された時の処理 演算器の初期化と表示する数の初期化,初期入力フラグのリセットを行う */
+    /** Cボタンが押された時の処理 演算器の初期化と表示する数列の初期化,初期入力フラグのリセットを行う */
     public void mouseClicked(MouseEvent e){
     	/*必要な処理を後でかく*/
     	/*cボタンは演算器の初期化と表示する数の初期化を行う*/
