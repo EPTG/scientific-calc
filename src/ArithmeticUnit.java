@@ -371,9 +371,9 @@ public class ArithmeticUnit{
 		}
     	BigDecimal tmp = new BigDecimal(list.get(0));
     	BigDecimal keta = new BigDecimal("1.0E15");
-    	DecimalFormat df1 = new DecimalFormat("###############.###############");
-    	DecimalFormat df2 = new DecimalFormat("0.00###################E0");
-    	if(tmp.compareTo(keta) > 0){
+    	DecimalFormat df1 = new DecimalFormat("################.###############");
+    	DecimalFormat df2 = new DecimalFormat("0.00#############E0");
+    	if(tmp.compareTo(keta) >= 0){
     	Ans=df2.format(tmp);
     	return df2.format(tmp);
     	}
