@@ -373,7 +373,7 @@ public class ArithmeticUnit{
     	BigDecimal keta = new BigDecimal("1.0E15");
     	DecimalFormat df1 = new DecimalFormat("################.###############");
     	DecimalFormat df2 = new DecimalFormat("0.00#############E0");
-    	if(tmp.compareTo(keta) >= 0){
+    	if(tmp.abs().compareTo(keta) >= 0){
     	Ans=df2.format(tmp);
     	return df2.format(tmp);
     	}
