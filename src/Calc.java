@@ -37,6 +37,8 @@ public class Calc extends JFrame{
     /** 演算器 */
     private ArithmeticUnit arithmUnit;
 
+
+
     /** 表示する数ラベル */
     public JLabel calcLabel;
 
@@ -104,6 +106,8 @@ public class Calc extends JFrame{
 
 		equalButton =new EqualButton(arithmUnit,dispCalcf);
 		//いろんなボタンのインスタンス化おわり
+
+
     }
     /** 電卓の表示を初期化する */
     private void initGUI(){
