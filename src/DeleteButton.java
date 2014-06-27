@@ -6,13 +6,10 @@ import javax.swing.JButton;
 
 public class DeleteButton extends JButton implements MouseListener{
 
-    /** 表示する数 */
+    /** 表示する数式 */
     private DisplayedCalculationFormula dispNumber;
 
-    /** 演算器 */
-
-    /** フィールドの表示する数に引数の表示する数を代入*/
-	
+    /** フィールドの表示する数に引数の表示する数式を代入*/
 	public DeleteButton(DisplayedCalculationFormula dispNumber){
 		super("Del");
 		this.dispNumber =dispNumber;
@@ -20,7 +17,7 @@ public class DeleteButton extends JButton implements MouseListener{
 	}
 
 
-    /** Cボタンが押された時の処理 演算器の初期化と表示する数の初期化,初期入力フラグのリセットを行う */
+    /** Delボタンが押された時の処理 表示する数式の1文字削除メソッドを呼び出す */
     public void mouseClicked(MouseEvent e){
     	/*必要な処理を後でかく*/
     	/*cボタンは演算器の初期化と表示する数の初期化を行う*/
