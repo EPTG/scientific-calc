@@ -37,8 +37,6 @@ public class Calc extends JFrame{
     /** 演算器 */
     private ArithmeticUnit arithmUnit;
 
-
-
     /** 表示する数ラベル */
     public JLabel calcLabel;
 
