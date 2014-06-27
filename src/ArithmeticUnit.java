@@ -28,7 +28,6 @@ public class ArithmeticUnit{
     /**ボタンを表示する演算子を列挙した配列*/
     private static String Rpares[]={RpareL,RpareR};
 
-
     /** 表示する数*/
     private DisplayedCalculationFormula dispCalcf;
 
@@ -37,16 +36,17 @@ public class ArithmeticUnit{
     	this.dispCalcf = dispCalcf;
     }
 
+    /** 計算結果を消去する*/
     public void Clear(){
     	Ans = "0";
     }
 
-    /** 演算子と数値を分ける*/
+    /** 演算子と数値を分けてArrayListに入れる。*/
     public String[] split_op_num(){
     	String[] s =dispCalcf.getslash().split("/");
     	return s;
     }
-
+    /** ArrayList内の要素で空白がある場合削除を行う */
     public List<String> Whitedel(List<String> list){
     	while(list.contains("")){
     	list.remove(list.indexOf(""));
@@ -54,11 +54,11 @@ public class ArithmeticUnit{
     	return list;
     }
 
-
+    /** Stringの配列をStringのArraylistに変換する */
     public List<String> convert(String[] array){
     	return new LinkedList<String>(Arrays.asList(array));
     }
-
+    /** √計算を行う */
     private String root(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -71,6 +71,7 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
+    /** 累乗計算を行う。*/
     private void pow(List<String> list) {
 		double firstnum;
 		firstnum =Double.valueOf(list.get(0));
@@ -84,8 +85,7 @@ public class ArithmeticUnit{
 	}
 
 
-
-
+    /** Log計算を行う */
     private String Log(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -99,7 +99,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		return num.toPlainString();
 	}
-
+    //**ln計算を行う。/
     private String Ln(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -114,7 +114,7 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-
+    /** Sin計算を行う*/
     private String Sin(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -128,7 +128,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		return num.toPlainString();
 	}
-
+    /** Cos計算を行う*/
     private String Cos(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -142,7 +142,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		return num.toPlainString();
 	}
-
+    /** Tan計算を行う*/
     private String Tan(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -157,7 +157,7 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-
+    /** 角度のラジアン変換を行う*/
     private String rad(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -172,7 +172,7 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-
+    /** 括弧の始まりから終わりを見つける。*/
     public List<String> Roundparentheses(List<String> list){
     	while(list.contains(RpareL)|list.contains(RpareR)){
     		int temp1= list.indexOf(RpareL);
@@ -208,7 +208,7 @@ public class ArithmeticUnit{
     	return list;
     }
 
-
+    /** StringのListを受け取って演算を行う。演算結果をString型で返す。*/
     public String operate(List<String> list) throws IndexOutOfBoundsException,ArithmeticException,NumberFormatException {
     	list = Whitedel(list);
     	System.out.println(list);
