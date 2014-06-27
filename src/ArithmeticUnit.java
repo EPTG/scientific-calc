@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-/** 演算器.　演算記号の表示部も含む,2つの数に対して4種類の演算をする.演算結果は「表示する数」オブジェクトに渡して表示する*/
+/** 演算器.　演算記号の表示部も含む,表示する数式クラスの「/」つき数式をうけとって演算を行う.演算結果は「表示する数」オブジェクトに渡して表示する*/
 public class ArithmeticUnit{
     /** +演算子(足し算記号).operatorが取りうる値 */
     public static String OP_PLUS = "+";
