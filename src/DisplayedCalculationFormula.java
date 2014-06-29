@@ -33,6 +33,10 @@ public class DisplayedCalculationFormula extends JLabel{
 
     /** 表示している数式に引数を加える */
     public void setDisplayedCalculationFormula(String o){
+    if(checkError()){
+    	System.out.println("test");
+    	return ;
+    }
 	if(checkFlag()){
 		unsetFlag();
 	    System.out.println(o);
@@ -43,7 +47,13 @@ public class DisplayedCalculationFormula extends JLabel{
     	disp=disp+o;
     	super.setText(disp);
     }
+
+
     public void setSlashCalculationFormula(String o){
+    	if(checkError()){
+        	System.out.println("test");
+        	return ;
+        }
     	slash=slash+o;
     }
 
@@ -63,7 +73,7 @@ public class DisplayedCalculationFormula extends JLabel{
     }
     /** 表示する数式の最後の文字を削除する。またスラッシュ付きの文は表示する数式に合わせる。*/
     public void Delate(){
-    	if(disp.length()==0){
+    	if(disp.length()==0 || checkError()){
     		return;
     	}
     	//表示する数の削除
@@ -95,7 +105,7 @@ public class DisplayedCalculationFormula extends JLabel{
     	System.out.println(slash);
     	super.setText(disp);
     }
-    
+
     /** 演算完了フラグを立てる */
     public void setFlag(){
 	finishedFlag=true;
@@ -114,7 +124,7 @@ public class DisplayedCalculationFormula extends JLabel{
     }
     /** Errorが表示されているか確認して表示されている場合trueを返し、表示されていない場合falseを返す。*/
     public boolean checkError(){//ラベルにErrorが表示されているか確認
-    	if ((super.getText()).equals("Error")){//セットされている文字列がErrorだった場合trueを返す
+    	if ((super.getText()).contains("Error")){//セットされている文字列がErrorだった場合trueを返す
 	    return true;
     	}
     	return false;//そうでない場合はfalseを返す。
