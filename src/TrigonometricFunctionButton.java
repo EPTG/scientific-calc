@@ -16,8 +16,14 @@ public class TrigonometricFunctionButton extends JButton implements MouseListene
     public static String Tan = "Tan";
     /** radが取りうる値 */
     public static String rad = "rad";
+    /** arcSinが取りうる値 */
+    public static String ASin = "arcSin";
+    /** Cosが取りうる値 */
+    public static String ACos = "arcCos";
+    /** Tanが取りうる値 */
+    public static String ATan = "arcTan";
     /** ボタンの表示と画面表示に用いる値を列挙した配列*/
-    public static String FANCTION[] = {Sin,Cos,Tan,rad};
+    public static String FANCTION[] = {Sin,Cos,Tan,rad,ASin,ACos,ATan};
 
     /** 割り当てられた三角関数 */
     private String tfanction;

@@ -13,7 +13,7 @@ public class DisplayedCalculationFormula extends JLabel{
     /** 演算完了フラグ */
     private Boolean finishedFlag;
     /** 演算完了時に演算結果を消すボタンを列挙した配列 */
-    private String[] Clearstr = {"0","1","2","3","4","5","6","7","8","9","Ans","(",")","√(","e","log(","ln(","Sin(","Cos(","Tan(","rad(","π"};
+    private String[] Clearstr = {"0","1","2","3","4","5","6","7","8","9","Ans","(",")","√(","e","log(","ln(","Sin(","Cos(","Tan(","rad(","π","arcSin(","arcCos(","arcTan("};
 
     /** 表示する数式の初期化をし初期表示を行う*/
     public DisplayedCalculationFormula(){

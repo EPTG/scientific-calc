@@ -71,9 +71,9 @@ public class Calc extends JFrame{
 
 		//いろんなボタンのインスタンス化
 
-		//Triボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がrad
-		Trigonometricbutton = new TrigonometricFunctionButton[4];
-		for (int i = 0; i<4; i++){
+		//Triボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がrad 4がarcSin 5がarcCos 6がarcTan
+		Trigonometricbutton = new TrigonometricFunctionButton[7];
+		for (int i = 0; i<7; i++){
 		    Trigonometricbutton[i] = new TrigonometricFunctionButton(dispCalcf,i);
 		}//Triボタンのインスタンス化ここまで
 
@@ -182,6 +182,9 @@ public class Calc extends JFrame{
 	add(Trigonometricbutton[1],c);
 	add(Trigonometricbutton[2],c);
 	add(Trigonometricbutton[3],c);
+	add(Trigonometricbutton[4],c);
+	add(Trigonometricbutton[5],c);
+	add(Trigonometricbutton[6],c);
 	add(fixedButton[0],c);
     }
 }
