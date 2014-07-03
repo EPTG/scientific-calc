@@ -65,7 +65,7 @@ public class ArithmeticUnit{
 		Double Dnum = num.doubleValue();
 		System.out.println(Dnum);
 		Dnum = Math.sqrt(Dnum);
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		System.out.println(Dnum);
 		return num.toPlainString();
@@ -95,7 +95,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -109,7 +109,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -124,11 +124,11 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
-    
+
     /** Sin計算を行う*/
     private String ASin(List<String> list, int indexOf) {
 		BigDecimal num;
@@ -139,11 +139,11 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
-    
+
     /** Cos計算を行う*/
     private String Cos(List<String> list, int indexOf) {
 		BigDecimal num;
@@ -154,11 +154,11 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
-    
+
     /** Cos計算を行う*/
     private String ACos(List<String> list, int indexOf) {
 		BigDecimal num;
@@ -169,11 +169,11 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
-    
+
     /** Tan計算を行う*/
     private String Tan(List<String> list, int indexOf) {
 		BigDecimal num;
@@ -184,11 +184,11 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
-    
+
     /** Tan計算を行う*/
     private String ATan(List<String> list, int indexOf) {
 		BigDecimal num;
@@ -199,11 +199,11 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
-    
+
 
     /** 角度のラジアン変換を行う*/
     private String rad(List<String> list, int indexOf) {
@@ -215,7 +215,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		System.out.println(Dnum);
 		// 一旦BigDecimalになおして丸めておくのが良さげ。
-		num =new BigDecimal(Dnum).setScale(15,BigDecimal.ROUND_HALF_EVEN);
+		num =new BigDecimal(Dnum).setScale(16,BigDecimal.ROUND_HALF_EVEN);
 		System.out.println(num);
 		return num.toPlainString();
 	}
@@ -300,7 +300,7 @@ public class ArithmeticUnit{
     	list.set(temp,Sin(list,temp));
     	list.remove(temp+1);
     	}
-    	
+
     	while(list.contains("arcSin")){
         	int temp = list.indexOf("arcSin");
         	list.set(temp,ASin(list,temp));
@@ -312,7 +312,7 @@ public class ArithmeticUnit{
         list.set(temp,Cos(list,temp));
         list.remove(temp+1);
         }
-    	
+
     	while(list.contains("arcCos")){
             int temp = list.indexOf("arcCos");
             list.set(temp,ACos(list,temp));
