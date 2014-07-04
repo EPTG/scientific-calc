@@ -22,10 +22,10 @@ public class OpButton extends JButton implements MouseListener{
     /** 割り当てられた演算器号 */
     private String opStr;
 
-    /** 演算器 */
+    /** 表示する数式 */
     private DisplayedCalculationFormula dispcalcf;
 
-    /** 引数で与えられた演算子でボタンを生成し、フィールドの演算器に引数の演算器を代入 */
+    /** 引数で与えられた演算子でボタンを生成し、フィールドの演算器に引数の演算器を代入。その後ボタンが押されたことを聞きつける状態になる。 */
     public OpButton(DisplayedCalculationFormula dispcalcf,int i){
     	super(OPERATORS[i]);
     	this.dispcalcf = dispcalcf;

@@ -3,7 +3,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
-
+/** 三角関数ボタンの生成とボタンが押された際の処理を行う */
 public class TrigonometricFunctionButton extends JButton implements MouseListener{
 
 	/** 画面表示 */
@@ -18,9 +18,9 @@ public class TrigonometricFunctionButton extends JButton implements MouseListene
     public static String rad = "rad";
     /** arcSinが取りうる値 */
     public static String ASin = "arcSin";
-    /** Cosが取りうる値 */
+    /** arcCosが取りうる値 */
     public static String ACos = "arcCos";
-    /** Tanが取りうる値 */
+    /** arcTanが取りうる値 */
     public static String ATan = "arcTan";
     /** ボタンの表示と画面表示に用いる値を列挙した配列*/
     public static String FANCTION[] = {Sin,Cos,Tan,rad,ASin,ACos,ATan};
@@ -28,14 +28,14 @@ public class TrigonometricFunctionButton extends JButton implements MouseListene
     /** 割り当てられた三角関数 */
     private String tfanction;
 
-    /** =ボタンを生成し、フィールドの演算器に引数の演算器を代入 */
+    /** 引数で指定した三角関数ボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入。その後ボタンが押されたことを聞きつける状態になる */
     public TrigonometricFunctionButton(DisplayedCalculationFormula dispCalc,int i){
     	super(FANCTION[i]);
     	this.dispCalc=dispCalc;
     	tfanction = FANCTION[i];
     	addMouseListener(this);
     }
-    /** ＝ボタンが押された */
+    /** */
     public void mouseClicked(MouseEvent e){
      	dispCalc.setDisplayedCalculationFormula(tfanction+"(");
     	dispCalc.setSlashCalculationFormula("/"+tfanction+"/"+"/"+"("+"/");

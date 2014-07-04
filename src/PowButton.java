@@ -8,9 +8,10 @@ public class PowButton extends JButton implements MouseListener {
 	/** ^が取りうる値 */
     public static String Pow = "^";
 
-	/** 演算器 */
+	/** 表示する数式 */
     private DisplayedCalculationFormula dispcalcf;
 
+    /** 累乗ボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入。その後ボタンが押されたことを聞きつける状態になる。 */
 	public PowButton(DisplayedCalculationFormula dispcalcf){
 		super(Pow);
 		this.dispcalcf=dispcalcf;

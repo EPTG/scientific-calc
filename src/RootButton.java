@@ -2,23 +2,23 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
-/** 演算子ボタンの生成と演算子ボタンが押された際の処理を行う */
+/** Rootボタンの生成とボタンが押された際の処理を行う */
 public class RootButton extends JButton implements MouseListener{
 
     /** √が取りうる値 */
     public static String Root = "√";
-  
-    /** 演算器 */
+
+    /** 表示する数式 */
     private DisplayedCalculationFormula dispcalcf;
 
-    /** 引数で与えられた演算子でボタンを生成し、フィールドの演算器に引数の演算器を代入 */
+    /** Rootボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入。その後ボタンが押されたことを聞きつけ状態になる。 */
     public RootButton(DisplayedCalculationFormula dispcalcf){
     	super(Root);
     	this.dispcalcf = dispcalcf;
     	addMouseListener(this);
     }
 
-    /** 演算器号ボタンが押された */
+    /** Rootボタンが押された */
     public void mouseClicked(MouseEvent e){
     	dispcalcf.setDisplayedCalculationFormula(Root+"(");
     	dispcalcf.setSlashCalculationFormula("/"+Root+"/"+"/"+"("+"/");

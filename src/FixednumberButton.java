@@ -15,11 +15,11 @@ public class FixednumberButton extends JButton implements MouseListener {
     public static String E = "e";
     /** ボタンを表示する定数を列挙した配列*/
     public static String FIXEDN[] = {PI,ANS,E};
-
+    /** 割り当てられた定数*/
     private String fixedn;
 
 
-
+    //* 引数で指定した定数でボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入。その後ボタンが押されたことを聞きつける状態になる */
 	public FixednumberButton(DisplayedCalculationFormula dispCalc,int i){
     	super(FIXEDN[i]);
     	this.dispCalc=dispCalc;

@@ -2,7 +2,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
-/** 演算子ボタンの生成と演算子ボタンが押された際の処理を行う */
+/** 括弧ボタンの生成とボタンが押された際の処理を行う */
 public class RoundparenthesesButton extends JButton implements MouseListener{
 
     /** (が取りうる値 */
@@ -19,7 +19,7 @@ public class RoundparenthesesButton extends JButton implements MouseListener{
     /** 演算器 */
     private DisplayedCalculationFormula dispcalcf;
 
-    /** 引数で与えられた演算子でボタンを生成し、フィールドの演算器に引数の演算器を代入 */
+    /** 引数で与えられた括弧でボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入 。その後ボタンが押されたことを聞きつける状態になる。*/
     public RoundparenthesesButton(DisplayedCalculationFormula dispcalcf,int i){
     	super(Rpares[i]);
     	this.dispcalcf = dispcalcf;
