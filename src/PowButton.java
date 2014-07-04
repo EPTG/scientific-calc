@@ -2,7 +2,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
-
+/** 累乗ボタンの生成とボタンが押された際の処理を行う */
 public class PowButton extends JButton implements MouseListener {
 
 	/** ^が取りうる値 */
