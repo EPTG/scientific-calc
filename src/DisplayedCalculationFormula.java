@@ -8,7 +8,7 @@ public class DisplayedCalculationFormula extends JLabel{
 
     /** 現在の式 */
     private String disp;
-    /** 現在の式を配列として取り込みやすくするために要素ごと（数字や演算子や（を一要素とする）に/をつけて */
+    /** 現在の式を配列として取り込みやすくするために要素ごと（数字や演算子や（を一要素とする）に/をつけた数式 */
     private String slash;
     /** 演算完了フラグ */
     private Boolean finishedFlag;
