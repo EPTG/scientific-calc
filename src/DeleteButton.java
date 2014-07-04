@@ -3,13 +3,13 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
-
+/**   Deleteボタンの生成とボタンが押された際の処理を行う */
 public class DeleteButton extends JButton implements MouseListener{
 
     /** 表示する数式 */
     private DisplayedCalculationFormula dispNumber;
 
-    /** フィールドの表示する数に引数の表示する数式を代入*/
+    /** Deleteボタンを生成し,フィールドの表示する数に引数の表示する数式を代入。その後ボタンが押されたことを聞きつける状態になる。*/
 	public DeleteButton(DisplayedCalculationFormula dispNumber){
 		super("Del");
 		this.dispNumber =dispNumber;

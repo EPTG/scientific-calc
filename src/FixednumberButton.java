@@ -3,7 +3,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
-
+/**   定数(πやe)ボタンの生成とボタンが押された際の処理を行う */
 public class FixednumberButton extends JButton implements MouseListener {
 	private DisplayedCalculationFormula dispCalc;
 
