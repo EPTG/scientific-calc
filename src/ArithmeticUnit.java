@@ -100,7 +100,7 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-    /**ln計算を行う。/
+    /**ln計算を行う。*/
     private String Ln(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
