@@ -99,6 +99,7 @@ public class ArithmeticUnit{
 		System.out.println(num);
 		return num.toPlainString();
 	}
+
     //**ln計算を行う。/
     private String Ln(List<String> list, int indexOf) {
 		BigDecimal num;
@@ -129,7 +130,8 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-    /** Sin計算を行う*/
+
+    /** arcSin計算を行う*/
     private String ASin(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -159,7 +161,8 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-    /** Cos計算を行う*/
+
+    /** arcCos計算を行う*/
     private String ACos(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -189,7 +192,8 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-    /** Tan計算を行う*/
+
+    /** arcTan計算を行う*/
     private String ATan(List<String> list, int indexOf) {
 		BigDecimal num;
 		num =new BigDecimal(list.get(indexOf+1));
@@ -220,7 +224,7 @@ public class ArithmeticUnit{
 		return num.toPlainString();
 	}
 
-    /** 括弧の始まりから終わりを見つける。*/
+    /** ArrayList内で括弧の始まりに対応した閉じ括弧を見つけるメソッド*/
     public List<String> Roundparentheses(List<String> list){
     	while(list.contains(RpareL)|list.contains(RpareR)){
     		int temp1= list.indexOf(RpareL);
@@ -263,12 +267,12 @@ public class ArithmeticUnit{
     	list = Roundparentheses(list);//括弧の処理
 
     	while(list.contains("π")){
-    	int temp =list.indexOf("π");
-    	list.set(temp, Double.toString(Math.PI));
+    		int temp =list.indexOf("π");
+    		list.set(temp, Double.toString(Math.PI));
     	}
 
     	while(list.contains("e")){
-        	int temp =list.indexOf("e");
+    		int temp =list.indexOf("e");
         	list.set(temp, Double.toString(Math.E));
         	}
 
@@ -278,39 +282,39 @@ public class ArithmeticUnit{
         	}
 
     	while(list.contains("√")){
-    	int temp = list.indexOf("√");
-    	list.set(temp,root(list,temp));
-    	list.remove(temp+1);
+    		int temp = list.indexOf("√");
+    		list.set(temp,root(list,temp));
+    		list.remove(temp+1);
     	}
 
     	while(list.contains("log")){
-        int temp = list.indexOf("log");
-        list.set(temp,Log(list,temp));
-        list.remove(temp+1);
+    		int temp = list.indexOf("log");
+    		list.set(temp,Log(list,temp));
+        	list.remove(temp+1);
         }
 
     	while(list.contains("ln")){
-        int temp = list.indexOf("ln");
-        list.set(temp,Ln(list,temp));
-        list.remove(temp+1);
+    		int temp = list.indexOf("ln");
+    		list.set(temp,Ln(list,temp));
+    		list.remove(temp+1);
         }
 
     	while(list.contains("Sin")){
-    	int temp = list.indexOf("Sin");
-    	list.set(temp,Sin(list,temp));
-    	list.remove(temp+1);
+    		int temp = list.indexOf("Sin");
+    		list.set(temp,Sin(list,temp));
+    		list.remove(temp+1);
     	}
 
     	while(list.contains("arcSin")){
         	int temp = list.indexOf("arcSin");
         	list.set(temp,ASin(list,temp));
         	list.remove(temp+1);
-        	}
+        }
 
     	while(list.contains("Cos")){
-        int temp = list.indexOf("Cos");
-        list.set(temp,Cos(list,temp));
-        list.remove(temp+1);
+    		int temp = list.indexOf("Cos");
+    		list.set(temp,Cos(list,temp));
+    		list.remove(temp+1);
         }
 
     	while(list.contains("arcCos")){
@@ -320,26 +324,26 @@ public class ArithmeticUnit{
             }
 
     	while(list.contains("Tan")){
-        int temp = list.indexOf("Tan");
-        list.set(temp,Tan(list,temp));
-        list.remove(temp+1);
+    		int temp = list.indexOf("Tan");
+    		list.set(temp,Tan(list,temp));
+    		list.remove(temp+1);
         }
 
     	while(list.contains("arcTan")){
             int temp = list.indexOf("arcTan");
             list.set(temp,ATan(list,temp));
             list.remove(temp+1);
-            }
+         }
 
     	while(list.contains("rad")){
-    	int temp = list.indexOf("rad");
-    	list.set(temp,rad(list,temp));
-    	list.remove(temp+1);
+    		int temp = list.indexOf("rad");
+    		list.set(temp,rad(list,temp));
+    		list.remove(temp+1);
     	}
 
     	while(list.contains("^")){
-    	int temp =list.indexOf("^");
-    	pow(list.subList(temp-1,temp+2));//累乗は○^○の形なので
+    		int temp =list.indexOf("^");
+    		pow(list.subList(temp-1,temp+2));//累乗は○^○の形なので
     	}
 
 
@@ -436,6 +440,7 @@ public class ArithmeticUnit{
 		}
     	BigDecimal tmp = new BigDecimal(list.get(0));
     	BigDecimal keta = new BigDecimal("1.0E15");
+    	// 数字の表示の仕方を決める。
     	DecimalFormat df1 = new DecimalFormat("################.###############");
     	DecimalFormat df2 = new DecimalFormat("0.00#############E0");
     	if(tmp.abs().compareTo(keta) >= 0){
