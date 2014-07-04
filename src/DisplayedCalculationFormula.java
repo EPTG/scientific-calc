@@ -48,7 +48,7 @@ public class DisplayedCalculationFormula extends JLabel{
     	super.setText(disp);
     }
 
-
+    /** スラッシュ付きの数式に引数を加える */
     public void setSlashCalculationFormula(String o){
     	if(checkError()){
         	System.out.println("test");

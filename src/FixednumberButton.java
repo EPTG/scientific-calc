@@ -5,6 +5,8 @@ import javax.swing.JButton;
 
 /**   定数(πやe)ボタンの生成とボタンが押された際の処理を行う */
 public class FixednumberButton extends JButton implements MouseListener {
+
+	/** 表示する数式*/
 	private DisplayedCalculationFormula dispCalc;
 
 	/** πが取りうる値 */
@@ -19,7 +21,7 @@ public class FixednumberButton extends JButton implements MouseListener {
     private String fixedn;
 
 
-    //* 引数で指定した定数でボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入。その後ボタンが押されたことを聞きつける状態になる */
+    /** 引数で指定した定数でボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入。その後ボタンが押されたことを聞きつける状態になる */
 	public FixednumberButton(DisplayedCalculationFormula dispCalc,int i){
     	super(FIXEDN[i]);
     	this.dispCalc=dispCalc;
@@ -27,6 +29,7 @@ public class FixednumberButton extends JButton implements MouseListener {
     	addMouseListener(this);
     }
 
+	/** 定数ボタンが押された */
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO 自動生成されたメソッド・スタブ
 		dispCalc.setDisplayedCalculationFormula(fixedn);

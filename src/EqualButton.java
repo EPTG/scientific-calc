@@ -11,14 +11,14 @@ public class EqualButton extends JButton implements MouseListener{
     /** 表示する数式 */
     private DisplayedCalculationFormula dispCalc;
 
-    /** =ボタンを生成し、フィールドの演算器と表示する数式に引数の演算器を代入 */
+    /** =ボタンを生成し、フィールドの演算器と表示する数式に引数の演算器を代入。ボタンが押されたことを聞きつけるのを始める。 */
     public EqualButton(ArithmeticUnit arithmUnit,DisplayedCalculationFormula dispCalc){
     	super("=");
     	this.arithmUnit = arithmUnit;
     	this.dispCalc=dispCalc;
     	addMouseListener(this);
     }
-    /** ＝ボタンが押された。スラッシュ付きの数式を読み出し、文字列をスラッシュごとに切り分けて配列の要素とする。その配列をArrayListに変換し、演算を行う*/
+    /** ＝ボタンが押された時の動作。スラッシュ付きの数式を読み出し、文字列をスラッシュごとに切り分けて配列の要素とする。その配列をArrayListに変換し、演算を行う*/
     public void mouseClicked(MouseEvent e){
     	if(dispCalc.checkError()){
     		System.out.println("test");

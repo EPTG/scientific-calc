@@ -11,14 +11,14 @@ public class LogButton extends JButton implements MouseListener{
     public static String LN ="ln";
     /**Logに関して取りうる値*/
     public static String LOGS[] = {LOG,LN};
-    
+
     /** 割り当てられた演算器号 */
     private String log;
 
-    /** 演算器 */
+    /** 表示する数式 */
     private DisplayedCalculationFormula dispcalcf;
-    
-    /** 引数で与えられた演算子でボタンを生成し、フィールドの演算器に引数の演算器を代入 */
+
+    /** 引数で与えられたLogでボタンを生成し、フィールドの表示する数式に引数の表示する数式を代入 */
     public LogButton(DisplayedCalculationFormula dispcalcf,int i){
     	super(LOGS[i]);
     	log = LOGS[i];
