@@ -16,16 +16,12 @@ public class Calc extends JFrame{
     private OpButton[] opButton;
     /**削除ボタン*/
     private DeleteButton delButton;
-    /** ()ボタン */
-    private RoundparenthesesButton[] RpButton;
-    /** √ボタン */
-    private RootButton RootButton;
-    /** ^ボタン */
-    private PowButton powButton;
     /** 定数ボタン */
     private FixednumberButton[] fixedButton;
     /** Logボタン */
     private LogButton[] logButton;
+    /** RADボタン */
+    private RadButton radButton;
     /** 三角関数ボタン */
     private TrigonometricFunctionButton[] Trigonometricbutton;
     /** ＝ボタン */
@@ -54,13 +50,16 @@ public class Calc extends JFrame{
     /** 電卓の属性を初期化する */
     private void initFields(){
 	/*後で必要なコードを書く*/
+
+    	//いろんなボタンのインスタンス化
+
     	dispCalcf=new DisplayedCalculationFormula();
     	arithmUnit=new ArithmeticUnit(dispCalcf);
     	clearButton =  new ClearButton(arithmUnit, dispCalcf);
+    	radButton = new RadButton(dispCalcf);
 		calcLabel = dispCalcf;
-		RootButton = new RootButton(dispCalcf);
-		powButton = new PowButton(dispCalcf);
 
+		//numボタンのインスタンスが配列に入れられる順は0から9まではその数字 10は（ 11は）
 		numButton = new NumButton[12];
 		for (int i = 0; i<12; i++){
 		    numButton[i] = new NumButton(dispCalcf,i);
@@ -69,11 +68,9 @@ public class Calc extends JFrame{
 		dotButton =new DotButton(dispCalcf);
 		delButton =new DeleteButton(dispCalcf);
 
-		//いろんなボタンのインスタンス化
-
-		//Triボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がrad 4がarcSin 5がarcCos 6がarcTan
-		Trigonometricbutton = new TrigonometricFunctionButton[7];
-		for (int i = 0; i<7; i++){
+		//Triボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がarcSin 4がarcCos 5がarcTan
+		Trigonometricbutton = new TrigonometricFunctionButton[6];
+		for (int i = 0; i<6; i++){
 		    Trigonometricbutton[i] = new TrigonometricFunctionButton(dispCalcf,i);
 		}//Triボタンのインスタンス化ここまで
 
@@ -89,20 +86,16 @@ public class Calc extends JFrame{
 		    opButton[i] = new OpButton(dispCalcf,i);
 		}//OPボタンのインスタンス化ここまで
 
-		//Fixednボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
+		//Fixednボタンのインスタンスが配列に入れられる順は0がπ 1がAns 2がe
 		fixedButton = new FixednumberButton[3];
 		for (int i = 0; i<3; i++){
 			fixedButton[i] = new FixednumberButton(dispCalcf,i);
 		}//Fixednボタンのインスタンス化ここまで
 
-		//()ボタンのインスタンスが配列に入れられる順は0が( 1が)
-		RpButton = new RoundparenthesesButton[2];
-		for (int i = 0; i<2; i++){
-		    RpButton[i] = new RoundparenthesesButton(dispCalcf,i);
-		}//()ボタンのインスタンス化ここまで
-
-
+		//equalButtonボタンのインスタンス化
 		equalButton =new EqualButton(arithmUnit,dispCalcf);
+		//equalButtonボタンのインスタンス化ここまで
+
 		//いろんなボタンのインスタンス化おわり
 
 
@@ -127,18 +120,20 @@ public class Calc extends JFrame{
     	calcLabel.setHorizontalAlignment(SwingConstants.RIGHT);
     	c.gridwidth =1;
     	//上から０行目おわり
-    	//上から1行め
+    	//上から1行め 7 8 9 c BS ( ) ^ √
     	c.gridy = 1;
     	add(numButton[7], c);
     	add(numButton[8], c);
     	add(numButton[9], c);
-    	c.gridwidth = 2;
     	add(clearButton, c);
-    	c.gridwidth = 1;
     	add(delButton,c);
-    	add(fixedButton[1],c);
+    	add(numButton[10], c);
+    	add(numButton[11], c);
+    	add(opButton[4],c);
+    	add(opButton[5],c);
     	//上から1行め終わり
-    	//上から2行め
+
+    	//上から2行め 4 5 6 × ÷ Ans e log Ln
     	c.gridwidth = 1;
     	c.gridy = 2;
     	add(numButton[4], c);
@@ -146,16 +141,17 @@ public class Calc extends JFrame{
     	add(numButton[6], c);
     	add(opButton[2], c);
     	add(opButton[3], c);
-    	add(RpButton[0],c);
-    	add(RpButton[1],c);
-    	add(RootButton,c);
-    	add(powButton,c);
+    	add(fixedButton[1],c);
+    	add(fixedButton[2],c);
+    	add(logButton[0],c);
+    	add(logButton[1],c);
     	//上から二行目終わり
-    	//上から三行目
+
+    	//上から三行目 1 2 3 + - Sin Cos Tan π
     	c.gridwidth = 1;
     	c.gridy = 3;
     	add(numButton[1], c);
-    	//よくわからないけど四行目にかくとおかしくなるからnum[0]は1の下につくる的なイメージで
+    	//四行目にかくとおかしくなるからnum[0]と.は1の下につくる的なイメージで
     	c.gridwidth = 2;
     	c.gridy = 4;
     	add(numButton[0],c);
@@ -164,28 +160,31 @@ public class Calc extends JFrame{
     	add(dotButton,c);
 
     	c.gridy = 3;
+
     	add(numButton[2], c);
     	add(numButton[3], c);
-	c.gridheight = 2;
-	//sumButtonは二行分
-	add(opButton[0], c);
-	c.gridheight = 1;
-	add(opButton[1], c);
-	add(fixedButton[2],c);
-	add(logButton[0],c);
-	add(logButton[1],c);
-	c.gridwidth = 2;
-	c.gridy = 4;
-	c.gridwidth = 1;
-	add(equalButton, c);
-	add(Trigonometricbutton[0],c);
-	add(Trigonometricbutton[1],c);
-	add(Trigonometricbutton[2],c);
-	add(Trigonometricbutton[3],c);
-	add(Trigonometricbutton[4],c);
-	add(Trigonometricbutton[5],c);
-	add(Trigonometricbutton[6],c);
-	add(fixedButton[0],c);
+    	c.gridheight = 2;
+    	//sumButtonは二行分
+    	
+    	add(opButton[0], c);
+    	c.gridheight = 1;
+    	
+    	add(opButton[1], c);
+    	add(Trigonometricbutton[0],c);
+    	add(Trigonometricbutton[1],c);
+    	add(Trigonometricbutton[2],c);
+    	add(fixedButton[0],c);
+
+    	//上から4行目 0 . + = aS aC aT rad
+    	c.gridwidth = 2;
+    	c.gridy = 4;
+    	c.gridwidth = 1;
+    	add(equalButton, c);
+
+    	add(Trigonometricbutton[3],c);
+    	add(Trigonometricbutton[4],c);
+    	add(Trigonometricbutton[5],c);
+    	add(radButton,c);
     }
 }
 
