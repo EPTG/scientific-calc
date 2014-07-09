@@ -61,9 +61,9 @@ public class Calc extends JFrame{
 		RootButton = new RootButton(dispCalcf);
 		powButton = new PowButton(dispCalcf);
 
-		numButton = new NumButton[10];
-		for (int i = 0; i<10; i++){
-		    numButton[i] = new NumButton(dispCalcf,Integer.toString(i));
+		numButton = new NumButton[12];
+		for (int i = 0; i<12; i++){
+		    numButton[i] = new NumButton(dispCalcf,i);
 		}
 
 		dotButton =new DotButton(dispCalcf);
