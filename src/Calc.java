@@ -8,14 +8,14 @@ import javax.swing.SwingConstants;
 /** 電卓クラス（電卓プログラムのメインクラス) */
 
 public class Calc extends JFrame{
-    /** 数字ボタン ０から９の１０個 */
+    /** 数字ボタン ０から９,()の12個 */
     private NumButton[] numButton;
     /** ドットボタン　. */
     private DotButton dotButton;
     /**演算記号ボタン + - * / の4つ */
     private OpButton[] opButton;
     /**削除ボタン*/
-    private DeleteButton delButton;
+    private BackSpaceButton delButton;
     /** 定数ボタン */
     private FixednumberButton[] fixedButton;
     /** Logボタン */
@@ -32,20 +32,26 @@ public class Calc extends JFrame{
     private DisplayedCalculationFormula dispCalcf;
     /** 演算器 */
     private ArithmeticUnit arithmUnit;
+    /** キーボードリスナー */
+    private static  KeyboardListener kListener;
 
     /** 表示する数ラベル */
     public JLabel calcLabel;
 
-    /**　メイン関数、Calcのオブジェクトの初期化を行い、フレームの生成と表示を行う*/
+    public static Calc calc;
+
+    /** メイン関数、Calcのオブジェクトの初期化を行い、フレームの生成と表示を行う*/
     public static void main(String[] args){
-	Calc calc = new Calc();
+	calc = new Calc();
 	calc.setVisible(true);
+	calc.requestFocus();
     }
 
     /** 電卓が使えるよう属性と表示の初期化をする*/
     public Calc() {
 	initFields();
 	initGUI();
+
     }
     /** 電卓の属性を初期化する */
     private void initFields(){
@@ -66,7 +72,7 @@ public class Calc extends JFrame{
 		}
 
 		dotButton =new DotButton(dispCalcf);
-		delButton =new DeleteButton(dispCalcf);
+		delButton =new BackSpaceButton(dispCalcf);
 
 		//Triボタンのインスタンスが配列に入れられる順は0がSin 1がCos 2がTan 3がarcSin 4がarcCos 5がarcTan
 		Trigonometricbutton = new TrigonometricFunctionButton[6];
@@ -96,12 +102,18 @@ public class Calc extends JFrame{
 		equalButton =new EqualButton(arithmUnit,dispCalcf);
 		//equalButtonボタンのインスタンス化ここまで
 
+		//** キーボードリスナー のインスタンス化
+		kListener =new KeyboardListener(numButton);
+		//キーボードリスナー のインスタンス化ここまで
+
 		//いろんなボタンのインスタンス化おわり
 
 
     }
     /** 電卓の表示を初期化する */
     private void initGUI(){
+    	this.addKeyListener(kListener);
+
     	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	/*後で必要なコードを書く*/
     	setSize(700,400);
@@ -165,10 +177,10 @@ public class Calc extends JFrame{
     	add(numButton[3], c);
     	c.gridheight = 2;
     	//sumButtonは二行分
-    	
+
     	add(opButton[0], c);
     	c.gridheight = 1;
-    	
+
     	add(opButton[1], c);
     	add(Trigonometricbutton[0],c);
     	add(Trigonometricbutton[1],c);
@@ -185,6 +197,7 @@ public class Calc extends JFrame{
     	add(Trigonometricbutton[4],c);
     	add(Trigonometricbutton[5],c);
     	add(radButton,c);
+
     }
 }
 

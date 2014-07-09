@@ -1,9 +1,9 @@
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 /** 数字ボタンの生成と数字ボタンが押された際の処理を行う */
-public class NumButton extends JButton implements MouseListener{
+public class NumButton extends JButton implements ActionListener{
 
     /** 割り当てられた数字 */
     private String digit;
@@ -25,25 +25,19 @@ public class NumButton extends JButton implements MouseListener{
     	super(Numbers[i]);
     	this.dispCalcf=dispCalcf;
     	digit=Numbers[i];
-    	addMouseListener(this);
+    	addActionListener(this);
     }
     /** 数字ボタンが押された 表示する数式に引数で指定された数の追加を行う。*/
-    public void mouseClicked(MouseEvent e){
-    if(digit.equals(RpareL) || digit.equals(RpareR)){
-    	dispCalcf.setDisplayedCalculationFormula(digit);
-    	dispCalcf.setSlashCalculationFormula("/"+digit+"/");
-    	}
-    else{
-    	dispCalcf.setDisplayedCalculationFormula(digit);
-    	dispCalcf.setSlashCalculationFormula(digit);
-    	}
-    }
-    /** 使用しない */
-    public void mouseEntered(MouseEvent e){}
-    /** 使用しない */
-    public void mouseExited(MouseEvent e){}
-    /** 使用しない */
-    public void mousePressed(MouseEvent e){}
-    /** 使用しない */
-    public void mouseReleased(MouseEvent e){}
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO 自動生成されたメソッド・スタブ
+		System.out.println("test");
+    	if(digit.equals(RpareL) || digit.equals(RpareR)){
+        	dispCalcf.setDisplayedCalculationFormula(digit);
+        	dispCalcf.setSlashCalculationFormula("/"+digit+"/");
+        	}
+        else{
+        	dispCalcf.setDisplayedCalculationFormula(digit);
+        	dispCalcf.setSlashCalculationFormula(digit);
+        	}
+	}
 }
