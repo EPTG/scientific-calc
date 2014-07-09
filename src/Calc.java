@@ -57,7 +57,7 @@ public class Calc extends JFrame{
     	dispCalcf=new DisplayedCalculationFormula();
     	arithmUnit=new ArithmeticUnit(dispCalcf);
     	clearButton =  new ClearButton(arithmUnit, dispCalcf);
-		calcLabel =dispCalcf;
+		calcLabel = dispCalcf;
 		RootButton = new RootButton(dispCalcf);
 		powButton = new PowButton(dispCalcf);
 
@@ -83,9 +83,9 @@ public class Calc extends JFrame{
 		    logButton[i] = new LogButton(dispCalcf,i);
 		}//Logボタンのインスタンス化ここまで
 
-		//OPボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷
-		opButton = new OpButton[4];
-		for (int i = 0; i<4; i++){
+		//OPボタンのインスタンスが配列に入れられる順は0が+ 1が－ 2が× 3が÷ 4が累乗 5が平方根
+		opButton = new OpButton[6];
+		for (int i = 0; i<6; i++){
 		    opButton[i] = new OpButton(dispCalcf,i);
 		}//OPボタンのインスタンス化ここまで
 

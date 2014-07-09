@@ -13,11 +13,14 @@ public class OpButton extends JButton implements MouseListener{
     public static String OP_TIMES = "×";
     /** ／演算子(割り算記号).operatorが取りうる値 */
     public static String OP_DIVIDE = "÷";
+    /** ^が取りうる値 */
+    public static String OP_POW = "^";
+    /** √が取りうる値 */
+    public static String OP_ROOT = "√";
     /** 演算子が未選択であることを示す.operatorが取りうる値 */
     public static String OP_NONE = "";
     /** ボタンを表示する演算子を列挙した配列*/
-    public static String OPERATORS[] = {OP_PLUS,OP_MINUS,OP_TIMES,OP_DIVIDE};
-
+    public static String OPERATORS[] = {OP_PLUS,OP_MINUS,OP_TIMES,OP_DIVIDE,OP_POW,OP_ROOT};
 
     /** 割り当てられた演算器号 */
     private String opStr;
@@ -35,8 +38,14 @@ public class OpButton extends JButton implements MouseListener{
 
     /** 演算器号ボタンが押された */
     public void mouseClicked(MouseEvent e){
+    	if(opStr.equals(OP_ROOT)){
+    	dispcalcf.setDisplayedCalculationFormula(opStr+"(");
+        dispcalcf.setSlashCalculationFormula("/"+opStr+"/"+"/"+"("+"/");
+    	}
+    	else{
     	dispcalcf.setDisplayedCalculationFormula(opStr);
     	dispcalcf.setSlashCalculationFormula("/"+opStr+"/");
+    	}
     }
     /** 使用しない */
     public void mouseEntered(MouseEvent e){}
