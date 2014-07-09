@@ -107,7 +107,7 @@ public class Calc extends JFrame{
 		//equalButtonボタンのインスタンス化ここまで
 
 		//** キーボードリスナー のインスタンス化
-		kListener =new KeyboardListener(numButton);
+		kListener =new KeyboardListener(numButton,opButton, dotButton, equalButton);
 		//キーボードリスナー のインスタンス化ここまで
 
 		//いろんなボタンのインスタンス化おわり

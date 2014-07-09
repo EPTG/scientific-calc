@@ -1,9 +1,9 @@
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 /** =ボタンの生成と=ボタンが押された際の処理を行う */
-public class EqualButton extends JButton implements MouseListener{
+public class EqualButton extends JButton implements ActionListener{
 
 	/** 演算器 */
     private ArithmeticUnit arithmUnit;
@@ -16,11 +16,12 @@ public class EqualButton extends JButton implements MouseListener{
     	super("=");
     	this.arithmUnit = arithmUnit;
     	this.dispCalc=dispCalc;
-    	addMouseListener(this);
+    	addActionListener(this);
     }
+
     /** ＝ボタンが押された時の動作。スラッシュ付きの数式を読み出し、文字列をスラッシュごとに切り分けて配列の要素とする。その配列をArrayListに変換し、演算を行う*/
-    public void mouseClicked(MouseEvent e){
-    	Calc.calc.requestFocus();
+    public void actionPerformed(ActionEvent e) {
+		Calc.calc.requestFocus();
     	if(dispCalc.checkError()){
     		System.out.println("test");
     		return ;
@@ -37,12 +38,4 @@ public class EqualButton extends JButton implements MouseListener{
 
 	dispCalc.setFlag();
     }
-   	/** 使用しない */
-    public void mouseEntered(MouseEvent e){}
-	/** 使用しない */
-    public void mouseExited(MouseEvent e){}
-	/** 使用しない */
-    public void mousePressed(MouseEvent e){}
-	/** 使用しない */
-    public void mouseReleased(MouseEvent e){}
 }

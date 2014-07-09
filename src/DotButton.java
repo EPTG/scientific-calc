@@ -1,9 +1,9 @@
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 /** ドットボタンの表示とドットボタンが押された際の処理を行う */
-public class DotButton extends JButton implements MouseListener{
+public class DotButton extends JButton implements ActionListener{
 
     /** 表示する数 */
     private DisplayedCalculationFormula dispNumber;
@@ -12,20 +12,13 @@ public class DotButton extends JButton implements MouseListener{
     public DotButton(DisplayedCalculationFormula dispNumber){
     	super(".");
     	this.dispNumber=dispNumber;
-    	addMouseListener(this);
+    	addActionListener(this);
     }
     /** ドットボタンが押された時の動作、表示する数式に”.”の追加を行う*/
-    public void mouseClicked(MouseEvent e){
-	dispNumber.setDisplayedCalculationFormula(".");
-	dispNumber.setSlashCalculationFormula(".");
-	Calc.calc.requestFocus();
-    }
-    /** 使用しない */
-    public void mouseEntered(MouseEvent e){}
-    /** 使用しない */
-    public void mouseExited(MouseEvent e){}
-    /** 使用しない */
-    public void mousePressed(MouseEvent e){}
-    /** 使用しない */
-    public void mouseReleased(MouseEvent e){}
+	public void actionPerformed(ActionEvent e) {
+		// TODO 自動生成されたメソッド・スタブ
+		dispNumber.setDisplayedCalculationFormula(".");
+		dispNumber.setSlashCalculationFormula(".");
+		Calc.calc.requestFocus();
+	}
 }

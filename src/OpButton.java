@@ -1,9 +1,9 @@
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 /** 演算子ボタンの生成と演算子ボタンが押された際の処理を行う */
-public class OpButton extends JButton implements MouseListener{
+public class OpButton extends JButton implements ActionListener{
 
     /** +演算子(足し算記号).operatorが取りうる値 */
     public static String OP_PLUS = "+";
@@ -33,27 +33,19 @@ public class OpButton extends JButton implements MouseListener{
     	super(OPERATORS[i]);
     	this.dispcalcf = dispcalcf;
     	opStr=OPERATORS[i];
-    	addMouseListener(this);
+    	addActionListener(this);
     }
 
     /** 演算器号ボタンが押された 表示する数式に引数で指定された演算器号の追加を行う。*/
-    public void mouseClicked(MouseEvent e){
-    	if(opStr.equals(OP_ROOT)){
-    	dispcalcf.setDisplayedCalculationFormula(opStr+"(");
-        dispcalcf.setSlashCalculationFormula("/"+opStr+"/"+"/"+"("+"/");
-    	}
-    	else{
-    	dispcalcf.setDisplayedCalculationFormula(opStr);
-    	dispcalcf.setSlashCalculationFormula("/"+opStr+"/");
-    	}
-    	Calc.calc.requestFocus();
-    }
-    /** 使用しない */
-    public void mouseEntered(MouseEvent e){}
-    /** 使用しない */
-    public void mouseExited(MouseEvent e){}
-    /** 使用しない */
-    public void mousePressed(MouseEvent e){}
-    /** 使用しない */
-    public void mouseReleased(MouseEvent e){}
+	public void actionPerformed(ActionEvent e) {
+		if(opStr.equals(OP_ROOT)){
+	    	dispcalcf.setDisplayedCalculationFormula(opStr+"(");
+	        dispcalcf.setSlashCalculationFormula("/"+opStr+"/"+"/"+"("+"/");
+	    	}
+	    	else{
+	    	dispcalcf.setDisplayedCalculationFormula(opStr);
+	    	dispcalcf.setSlashCalculationFormula("/"+opStr+"/");
+	    	}
+	    	Calc.calc.requestFocus();
+	}
 }
