@@ -33,7 +33,7 @@ public class TrigonometricFunctionButton extends JButton implements MouseListene
     	tfanction = FANCTION[i];
     	addMouseListener(this);
     }
-    /** 三角関数ボタンが押された時の動作*/
+    /** 三角関数ボタンが押された時の動作、表示する数式に引数で指定された三角関数の追加を行う。*/
     public void mouseClicked(MouseEvent e){
      	dispCalc.setDisplayedCalculationFormula(tfanction+"(");
     	dispCalc.setSlashCalculationFormula("/"+tfanction+"/"+"/"+"("+"/");

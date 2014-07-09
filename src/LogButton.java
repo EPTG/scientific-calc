@@ -26,7 +26,7 @@ public class LogButton extends JButton implements MouseListener{
     	addMouseListener(this);
     }
 
-    /** 演算器号ボタンが押された */
+    /** 演算器号ボタンが押された、表示する数式に”log”または"ln"の追加を行う。**/
     public void mouseClicked(MouseEvent e){
     	dispcalcf.setDisplayedCalculationFormula(log+"(");
     	dispcalcf.setSlashCalculationFormula("/"+log+"/"+"/"+"("+"/");

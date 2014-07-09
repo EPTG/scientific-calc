@@ -14,7 +14,7 @@ public class DotButton extends JButton implements MouseListener{
     	this.dispNumber=dispNumber;
     	addMouseListener(this);
     }
-    /** ドットボタンが押された */
+    /** ドットボタンが押された時の動作、表示する数式に”.”の追加を行う*/
     public void mouseClicked(MouseEvent e){
 	dispNumber.setDisplayedCalculationFormula(".");
 	dispNumber.setSlashCalculationFormula(".");

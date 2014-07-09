@@ -18,7 +18,7 @@ public class RadButton extends JButton implements MouseListener{
     	this.dispCalc=dispCalc;
     	addMouseListener(this);
     }
-    /** 三角関数ボタンが押された時の動作*/
+    /** Radボタンが押された時の動作、表示する数式に"rad"の追加を行う。*/
     public void mouseClicked(MouseEvent e){
      	dispCalc.setDisplayedCalculationFormula(RAD+"(");
     	dispCalc.setSlashCalculationFormula("/"+RAD+"/"+"/"+"("+"/");

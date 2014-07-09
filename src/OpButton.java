@@ -36,7 +36,7 @@ public class OpButton extends JButton implements MouseListener{
     	addMouseListener(this);
     }
 
-    /** 演算器号ボタンが押された */
+    /** 演算器号ボタンが押された 表示する数式に引数で指定された演算器号の追加を行う。*/
     public void mouseClicked(MouseEvent e){
     	if(opStr.equals(OP_ROOT)){
     	dispcalcf.setDisplayedCalculationFormula(opStr+"(");

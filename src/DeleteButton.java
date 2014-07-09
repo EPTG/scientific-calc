@@ -19,8 +19,7 @@ public class DeleteButton extends JButton implements MouseListener{
 
     /** Delボタンが押された時の処理 表示する数式の1文字削除メソッドを呼び出す */
     public void mouseClicked(MouseEvent e){
-    	/*必要な処理を後でかく*/
-    	/*cボタンは演算器の初期化と表示する数の初期化を行う*/
+
     	dispNumber.Delate();
     }
     /**使用しない*/

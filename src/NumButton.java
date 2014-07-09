@@ -27,7 +27,7 @@ public class NumButton extends JButton implements MouseListener{
     	digit=Numbers[i];
     	addMouseListener(this);
     }
-    /** 数字ボタンが押された */
+    /** 数字ボタンが押された 表示する数式に引数で指定された数の追加を行う。*/
     public void mouseClicked(MouseEvent e){
     if(digit.equals(RpareL) || digit.equals(RpareR)){
     	dispCalcf.setDisplayedCalculationFormula(digit);
