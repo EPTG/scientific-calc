@@ -30,6 +30,7 @@ public class LogButton extends JButton implements MouseListener{
     public void mouseClicked(MouseEvent e){
     	dispcalcf.setDisplayedCalculationFormula(log+"(");
     	dispcalcf.setSlashCalculationFormula("/"+log+"/"+"/"+"("+"/");
+    	Calc.calc.requestFocus();
     }
     /** 使用しない */
     public void mouseEntered(MouseEvent e){}

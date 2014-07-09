@@ -27,6 +27,7 @@ public class FixednumberButton extends JButton implements MouseListener {
     	this.dispCalc=dispCalc;
     	fixedn=FIXEDN[i];
     	addMouseListener(this);
+
     }
 
 	/** 定数ボタンが押された、表示する数式に引数で指定された定数の追加を行う。* */
@@ -34,6 +35,7 @@ public class FixednumberButton extends JButton implements MouseListener {
 		// TODO 自動生成されたメソッド・スタブ
 		dispCalc.setDisplayedCalculationFormula(fixedn);
     	dispCalc.setSlashCalculationFormula("/"+fixedn+"/");
+    	Calc.calc.requestFocus();
 	}
 	/** 使用しない */
     public void mouseEntered(MouseEvent e){}

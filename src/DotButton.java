@@ -18,6 +18,7 @@ public class DotButton extends JButton implements MouseListener{
     public void mouseClicked(MouseEvent e){
 	dispNumber.setDisplayedCalculationFormula(".");
 	dispNumber.setSlashCalculationFormula(".");
+	Calc.calc.requestFocus();
     }
     /** 使用しない */
     public void mouseEntered(MouseEvent e){}

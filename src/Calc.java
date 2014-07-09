@@ -47,6 +47,10 @@ public class Calc extends JFrame{
 	calc.requestFocus();
     }
 
+    public void RemoveFocus(){
+    calc.requestFocus();
+    }
+
     /** 電卓が使えるよう属性と表示の初期化をする*/
     public Calc() {
 	initFields();

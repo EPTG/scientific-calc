@@ -39,5 +39,6 @@ public class NumButton extends JButton implements ActionListener{
         	dispCalcf.setDisplayedCalculationFormula(digit);
         	dispCalcf.setSlashCalculationFormula(digit);
         	}
+    	Calc.calc.requestFocus();
 	}
 }

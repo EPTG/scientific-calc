@@ -46,6 +46,7 @@ public class OpButton extends JButton implements MouseListener{
     	dispcalcf.setDisplayedCalculationFormula(opStr);
     	dispcalcf.setSlashCalculationFormula("/"+opStr+"/");
     	}
+    	Calc.calc.requestFocus();
     }
     /** 使用しない */
     public void mouseEntered(MouseEvent e){}

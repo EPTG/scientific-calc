@@ -9,7 +9,7 @@ public class ClearButton extends JButton implements MouseListener{
     private DisplayedCalculationFormula dispNumber;
     /** 演算器 */
     private ArithmeticUnit arithmUnit;
-    
+
 
     /** フィールドの表示する数と演算器に引数の表示する数式と演算器を代入 */
     public ClearButton(ArithmeticUnit arithmUnit,DisplayedCalculationFormula dispNumber){
@@ -25,6 +25,7 @@ public class ClearButton extends JButton implements MouseListener{
     	/*cボタンは演算器の初期化と表示する数の初期化を行う*/
     	dispNumber.clear();
     	arithmUnit.Clear();
+    	Calc.calc.requestFocus();
     }
     /**使用しない*/
     public void mouseEntered(MouseEvent e){}

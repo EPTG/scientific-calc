@@ -20,6 +20,7 @@ public class EqualButton extends JButton implements MouseListener{
     }
     /** ＝ボタンが押された時の動作。スラッシュ付きの数式を読み出し、文字列をスラッシュごとに切り分けて配列の要素とする。その配列をArrayListに変換し、演算を行う*/
     public void mouseClicked(MouseEvent e){
+    	Calc.calc.requestFocus();
     	if(dispCalc.checkError()){
     		System.out.println("test");
     		return ;
@@ -33,6 +34,7 @@ public class EqualButton extends JButton implements MouseListener{
 		}catch(NumberFormatException e1){
 			dispCalc.setText("文字列Error");
 		}
+
 	dispCalc.setFlag();
     }
    	/** 使用しない */

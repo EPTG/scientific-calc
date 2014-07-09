@@ -22,6 +22,7 @@ public class RadButton extends JButton implements MouseListener{
     public void mouseClicked(MouseEvent e){
      	dispCalc.setDisplayedCalculationFormula(RAD+"(");
     	dispCalc.setSlashCalculationFormula("/"+RAD+"/"+"/"+"("+"/");
+    	Calc.calc.requestFocus();
     }
    	/** 使用しない */
     public void mouseEntered(MouseEvent e){}

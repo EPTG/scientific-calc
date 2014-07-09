@@ -37,6 +37,7 @@ public class TrigonometricFunctionButton extends JButton implements MouseListene
     public void mouseClicked(MouseEvent e){
      	dispCalc.setDisplayedCalculationFormula(tfanction+"(");
     	dispCalc.setSlashCalculationFormula("/"+tfanction+"/"+"/"+"("+"/");
+    	Calc.calc.requestFocus();
     }
    	/** 使用しない */
     public void mouseEntered(MouseEvent e){}

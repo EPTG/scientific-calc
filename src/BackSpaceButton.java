@@ -19,8 +19,8 @@ public class BackSpaceButton extends JButton implements MouseListener{
 
     /** Delボタンが押された時の処理 表示する数式の1文字削除メソッドを呼び出す */
     public void mouseClicked(MouseEvent e){
-
     	dispNumber.Delate();
+    	Calc.calc.requestFocus();
     }
     /**使用しない*/
     public void mouseEntered(MouseEvent e){}

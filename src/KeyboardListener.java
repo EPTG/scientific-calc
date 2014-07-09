@@ -19,8 +19,8 @@ public class KeyboardListener extends JFrame implements KeyListener {
 	public void keyReleased(KeyEvent e) {
 		KeyCode=e.getKeyCode();
 		System.out.println(KeyCode);
-		if(KeyCode>=96 || KeyCode<=105 ){
-			this.numButton[KeyCode-96].doClick(100);
+		if(KeyCode>=96 && KeyCode<=105 ){
+			this.numButton[KeyCode-96].doClick();
 		}
 	}
 	public void keyTyped(KeyEvent e) {}
